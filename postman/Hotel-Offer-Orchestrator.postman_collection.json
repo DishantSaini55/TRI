@@ -1,0 +1,28 @@
+{
+  "info": {
+    "name": "Hotel Offer Orchestrator",
+    "_postman_id": "c1be5eb7-3df0-4b9b-a93b-5d4fb8bba001",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3001" }
+  ],
+  "item": [
+    {
+      "name": "Hotels - Delhi",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/hotels?city=delhi" }
+    },
+    {
+      "name": "Hotels - Delhi Price Filter",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/hotels?city=delhi&minPrice=5500&maxPrice=7000" }
+    },
+    {
+      "name": "Hotels - No Results",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/hotels?city=jaipur" }
+    },
+    {
+      "name": "Health",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" }
+    }
+  ]
+}
