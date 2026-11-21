@@ -11,6 +11,19 @@ const temporalAddress = process.env.TEMPORAL_ADDRESS ?? "localhost:7233";
 const port = Number(process.env.PORT ?? 3000);
 let temporalClient: Client;
 
+app.get("/", (_req: Request, res: Response) => {
+  res.json({
+    service: "Hotel Offer Orchestrator",
+    status: "running",
+    endpoints: {
+      health: "GET /health",
+      hotels: "GET /api/hotels?city=delhi",
+      supplierA: "GET /supplierA/hotels?city=delhi",
+      supplierB: "GET /supplierB/hotels?city=delhi"
+    }
+  });
+});
+
 app.get("/supplierA/hotels", (req: Request, res: Response) => {
   res.json(getSupplierOffers("Supplier A", String(req.query.city ?? "")));
 });
