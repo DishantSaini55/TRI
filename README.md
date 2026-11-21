@@ -27,7 +27,7 @@ docker compose up --build
 Then call (port `3001` is used here because port `3000` may already be occupied by another local service):
 
 ```text
-http://localhost:3001/api/hotels?city=delhi&minPrice=5500&maxPrice=7000
+http://127.0.0.1:3001/api/hotels?city=delhi&minPrice=5500&maxPrice=7000
 ```
 
 ## Run locally
